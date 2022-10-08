@@ -68,7 +68,10 @@ class MealDetailScreen extends StatelessWidget {
                     leading: CircleAvatar(
                         child: Text("#${index + 1}"),
                         backgroundColor: Color.fromARGB(255, 231, 229, 229)),
-                    title: Text(mealDetail.steps[index]),
+                    title: Text(
+                      mealDetail.steps[index],
+                      style: TextStyle(fontFamily: 'baloo'),
+                    ),
                   );
                 },
               ),
