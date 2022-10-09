@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
   };
 
   List<Meal> availableMeals = DUMMY_MEALS;
+  List<Meal> favMeals = [];
 
   void updateFilters(Map<String, bool> newVals) {
     setState(() {
@@ -49,6 +50,21 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  bool isFav(String id) {
+    return favMeals.any((meal) => meal.id == id);
+  }
+
+  void toggleFavourites(String mId) {
+    final existingIndex = favMeals.indexWhere((meal) => meal.id == mId);
+    setState(() {
+      if (existingIndex >= 0) {
+        favMeals.removeAt(existingIndex);
+      } else {
+        favMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mId));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -57,9 +73,9 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.red,
       ),
       routes: {
-        '/': (ctx) => TabsScreen(),
+        '/': (ctx) => TabsScreen(favMeals),
         '/category_meals': (ctx) => CategoryMealsScreen(availableMeals),
-        '/meal_detail': (ctx) => MealDetailScreen(),
+        '/meal_detail': (ctx) => MealDetailScreen(toggleFavourites,isFav),
         '/filters': (ctx) => FiltersScreen(filters, updateFilters)
       },
     );
