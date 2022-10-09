@@ -18,16 +18,16 @@ class CategoryMealsScreen extends StatelessWidget {
           title: Text(catTitle as String),
         ),
         body: ListView.builder(
-          itemCount: categoryMeals.length,
-          itemBuilder: (context, index) {
-            return MealItem(
-                categoryMeals[index].id,
-                categoryMeals[index].title,
-                categoryMeals[index].imageUrl,
-                categoryMeals[index].duration,
-                categoryMeals[index].complexity,
-                categoryMeals[index].affordability);
-          },
-        ));
+      itemCount: categoryMeals.length,
+      itemBuilder: (context, index) {
+        return MealItem(
+            categoryMeals[index].id,
+            categoryMeals[index].title,
+            categoryMeals[index].imageUrl,
+            categoryMeals[index].duration,
+            categoryMeals[index].complexity,
+            categoryMeals[index].affordability);
+      },
+    ));
   }
 }

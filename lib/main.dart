@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app/categories_screen.dart';
 import 'package:food_app/category_meals_screen.dart';
 import 'package:food_app/meal_detail_screen.dart';
+import 'package:food_app/tabs_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Food App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: CategoriesScreen(),
+
       routes: {
+        '/': (ctx) => TabsScreen(),
         '/category_meals': (ctx) => CategoryMealsScreen(),
         '/meal_detail': (ctx) => MealDetailScreen()
       },
