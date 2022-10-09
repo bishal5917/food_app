@@ -36,7 +36,9 @@ class MainDrawer extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 30,
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/');
+            },
           ),
           ListTile(
             leading: Icon(
@@ -49,7 +51,9 @@ class MainDrawer extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 30,
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/filters');
+            },
           )
         ],
       ),

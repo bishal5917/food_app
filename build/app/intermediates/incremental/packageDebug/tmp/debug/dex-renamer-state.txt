@@ -1,4 +1,4 @@
-#Sun Oct 09 15:16:45 NPT 2022
+#Sun Oct 09 16:39:27 NPT 2022
 base.0=D\:\\flutter projects\\food_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
